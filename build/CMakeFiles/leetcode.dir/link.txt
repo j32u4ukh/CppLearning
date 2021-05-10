@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -Wall -std=c++11 -O3 -fopenmp -pthread  -rdynamic CMakeFiles/leetcode.dir/src/leetcode.cpp.o  -o leetcode   -L/home/j32u4ukh/Documents/CppLearning/lib 
