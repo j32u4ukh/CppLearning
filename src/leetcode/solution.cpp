@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include <iostream>
 #include <string>
 #include <map>
@@ -120,61 +119,61 @@ bool Solution::palindromeNumber(int x) {
 }
 
 
-int Solution::romanToInt(std::string roman)
-{
-    /*    Symbol       Value
-            I             1
-            V             5
-            X             10
-            L             50
-            C             100
-            D             500
-            M             1000    */
-    char roman_numbers[] = { 'M' , 'D', 'C', 'L', 'X', 'V', 'I'};
-    std::map<char, int> roman_map = {
-        {'I', 1},
-        {'V', 5},
-        {'X', 10},
-        {'L', 50},
-        {'C', 100},
-        {'D', 500},
-        {'M', 1000}
-    };
+// int Solution::romanToInt(std::string roman)
+// {
+//     /*    Symbol       Value
+//             I             1
+//             V             5
+//             X             10
+//             L             50
+//             C             100
+//             D             500
+//             M             1000    */
+//     char roman_numbers[] = { 'M' , 'D', 'C', 'L', 'X', 'V', 'I'};
+//     std::map<char, int> roman_map = {
+//         {'I', 1},
+//         {'V', 5},
+//         {'X', 10},
+//         {'L', 50},
+//         {'C', 100},
+//         {'D', 500},
+//         {'M', 1000}
+//     };
 
-    int i, len = _countof(roman_numbers);
-    char c;
-    std::vector<int> indexs;
-    //c = &roman_numbers[0];
-    //indexs = utils::string::findAll(roman, c);
+//     int i, len = _countof(roman_numbers);
+//     char c;
+//     std::vector<int> indexs;
+//     //c = &roman_numbers[0];
+//     //indexs = utils::string::findAll(roman, c);
 
-    // for (i = 0; i < len; i++) {
-    //     std::cout << "loop:" << i << std::endl;
-    //     c = roman_numbers[i];
-    //     indexs = utils::string::findAll(roman, c);
+//     // for (i = 0; i < len; i++) {
+//     //     std::cout << "loop:" << i << std::endl;
+//     //     c = roman_numbers[i];
+//     //     indexs = utils::string::findAll(roman, c);
 
-    //     //for (int j = 0; j < indexs.size(); j++) {
-    //     //    cout << "j:" << indexs[j] << endl;
-    //     //}
-    //     std::cout << c << " @ " << utils::vector::toString(indexs) << std::endl;
-    // }
+//     //     //for (int j = 0; j < indexs.size(); j++) {
+//     //     //    cout << "j:" << indexs[j] << endl;
+//     //     //}
+//     //     std::cout << c << " @ " << utils::vector::toString(indexs) << std::endl;
+//     // }
 
-    //cout << "mapValueCompare:" << mapValueCompare(roman_map, roman[0], roman[1]) << endl;
+//     //cout << "mapValueCompare:" << mapValueCompare(roman_map, roman[0], roman[1]) << endl;
 
-	return 0;
-}
+// 	return 0;
+// }
 
 template<typename K, typename V>
-bool mapValueCompare(map<K, V> _map, K key1, K key2) {  
+bool mapValueCompare(std::map<K, V> _map, K key1, K key2) {  
     V value1 = _map[key1];
     V value2 = _map[key2];
 
-    cout << "value1:" << value1 << ", value2:" << value2 << endl;
+    std::cout << "value1:" << value1 << ", value2:" << value2 << std::endl;
 
     return value2 > value1;
 }
 
 #pragma region romanToInt: 效率可再提升
-int Solution::romanToInt(string s)
+int Solution::romanToInt(std::string s)
 {
     int len = static_cast<int>(s.size());
 
@@ -198,13 +197,13 @@ int Solution::romanToInt(string s)
         }
 
         int index = static_cast<int>(t);
-        string left = subString(s, 0, index);
-        string right = subString(s, index + 1, len);
+        std::string left = subString(s, 0, index);
+        std::string right = subString(s, index + 1, len);
         return value - romanToInt(left) + romanToInt(right);
     }
 }
 
-string subString(string str, int from, int to) {
+std::string subString(std::string str, int from, int to) {
     if (from > to) {
         throw "from > to";
     }
@@ -213,7 +212,7 @@ string subString(string str, int from, int to) {
 }
 #pragma endregion
 
-string Solution::longestCommonPrefix(vector<string>& strs)
+std::string Solution::longestCommonPrefix(std::vector<std::string>& strs)
 {
     int n_string = strs.size();
     if (n_string == 0) {
@@ -231,7 +230,7 @@ string Solution::longestCommonPrefix(vector<string>& strs)
             }
         }
 
-        string common_prefix = "";
+        std::string common_prefix = "";
         int i;
         for (i = 0; i < shortest_len; i++) {
             char c = strs[0][i];
@@ -255,7 +254,7 @@ string Solution::longestCommonPrefix(vector<string>& strs)
 }
 
 #pragma region isValid: 效率可再提升，很多事前過濾，或許後面的其他步驟也可以做到
-bool Solution::isValid(string s)
+bool Solution::isValid(std::string s)
 {
     int len = s.length();
 
@@ -277,7 +276,7 @@ bool Solution::isValid(string s)
         return false;
     }
 
-    unordered_map<char, char> left_map = {
+    std::unordered_map<char, char> left_map = {
         {')', '('},
         {']', '['},
         {'}', '{'},
@@ -349,7 +348,7 @@ bool Solution::isValid(string s)
     return false;
 }
 
-int findRightParentheses(char left_parentheses, string s, char right_parentheses) {
+int findRightParentheses(char left_parentheses, std::string s, char right_parentheses) {
     int i, len = s.length(), pointer = 0;
 
     for (i = 0; i < len; i++) {
@@ -465,7 +464,7 @@ int getListNodeDepth(ListNode* list_node) {
 #pragma endregion
 
 #pragma region removeDuplicates: 註解內容為更快速的版本，只需長度內的內容是它所預期的就好，不需要修改整個 vector
-int Solution::removeDuplicates(vector<int>& nums)
+int Solution::removeDuplicates(std::vector<int>& nums)
 {
     /*
     int len = static_cast<int>(nums.size());
@@ -489,7 +488,7 @@ int Solution::removeDuplicates(vector<int>& nums)
         return len;
     }
 
-    vector<int>::iterator it;
+    std::vector<int>::iterator it;
     int last = nums[0];
 
     for (it = nums.begin() + 1; it != nums.end(); it++) {
@@ -507,7 +506,7 @@ int Solution::removeDuplicates(vector<int>& nums)
 #pragma endregion
 
 
-int Solution::removeElement(vector<int>& nums, int val)
+int Solution::removeElement(std::vector<int>& nums, int val)
 {
     int input, output = 0, temp, len = nums.size();
 

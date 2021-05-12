@@ -1,8 +1,8 @@
 #include <iostream>
 #include "math.h"
+#include "utils.hpp"
 #include "leetcode/tester.hpp"
 #include "leetcode/solution.hpp"
-#include "leetcode/utils.hpp"
 
 using namespace std;
 

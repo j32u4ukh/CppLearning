@@ -1,4 +1,4 @@
-#include "leetcode/utils.hpp"
+#include "utils.hpp"
 
 
 namespace utils {

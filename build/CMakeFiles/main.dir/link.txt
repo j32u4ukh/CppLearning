@@ -1,1 +1,1 @@
-/usr/bin/c++  -std=c++11 -Wall -std=c++11 -O3 -fopenmp -pthread  -rdynamic CMakeFiles/main.dir/src/main.cpp.o  -o main   -L/home/j32u4ukh/Documents/CppLearning/lib 
+/usr/bin/c++  -std=c++11 -Wall -std=c++11 -O3 -fopenmp -pthread  -rdynamic CMakeFiles/main.dir/src/main.cpp.o  -o main 

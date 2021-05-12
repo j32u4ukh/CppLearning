@@ -140,6 +140,7 @@ preinstall/fast:
 
 # clear depends
 depend:
+	$(CMAKE_COMMAND) -P /home/j32u4ukh/Documents/CppLearning/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -533,32 +534,113 @@ ContinuousSubmit/fast:
 	$(MAKE) -f CMakeFiles/ContinuousSubmit.dir/build.make CMakeFiles/ContinuousSubmit.dir/build
 .PHONY : ContinuousSubmit/fast
 
-src/leetcode.o: src/leetcode.cpp.o
+src/leetcode/leetcode.o: src/leetcode/leetcode.cpp.o
 
-.PHONY : src/leetcode.o
+.PHONY : src/leetcode/leetcode.o
 
 # target to build an object file
-src/leetcode.cpp.o:
-	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/leetcode.cpp.o
-.PHONY : src/leetcode.cpp.o
+src/leetcode/leetcode.cpp.o:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/leetcode/leetcode.cpp.o
+.PHONY : src/leetcode/leetcode.cpp.o
 
-src/leetcode.i: src/leetcode.cpp.i
+src/leetcode/leetcode.i: src/leetcode/leetcode.cpp.i
 
-.PHONY : src/leetcode.i
+.PHONY : src/leetcode/leetcode.i
 
 # target to preprocess a source file
-src/leetcode.cpp.i:
-	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/leetcode.cpp.i
-.PHONY : src/leetcode.cpp.i
+src/leetcode/leetcode.cpp.i:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/leetcode/leetcode.cpp.i
+.PHONY : src/leetcode/leetcode.cpp.i
 
-src/leetcode.s: src/leetcode.cpp.s
+src/leetcode/leetcode.s: src/leetcode/leetcode.cpp.s
 
-.PHONY : src/leetcode.s
+.PHONY : src/leetcode/leetcode.s
 
 # target to generate assembly for a file
-src/leetcode.cpp.s:
-	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/leetcode.cpp.s
-.PHONY : src/leetcode.cpp.s
+src/leetcode/leetcode.cpp.s:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/leetcode/leetcode.cpp.s
+.PHONY : src/leetcode/leetcode.cpp.s
+
+src/leetcode/listnode.o: src/leetcode/listnode.cpp.o
+
+.PHONY : src/leetcode/listnode.o
+
+# target to build an object file
+src/leetcode/listnode.cpp.o:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/leetcode/listnode.cpp.o
+.PHONY : src/leetcode/listnode.cpp.o
+
+src/leetcode/listnode.i: src/leetcode/listnode.cpp.i
+
+.PHONY : src/leetcode/listnode.i
+
+# target to preprocess a source file
+src/leetcode/listnode.cpp.i:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/leetcode/listnode.cpp.i
+.PHONY : src/leetcode/listnode.cpp.i
+
+src/leetcode/listnode.s: src/leetcode/listnode.cpp.s
+
+.PHONY : src/leetcode/listnode.s
+
+# target to generate assembly for a file
+src/leetcode/listnode.cpp.s:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/leetcode/listnode.cpp.s
+.PHONY : src/leetcode/listnode.cpp.s
+
+src/leetcode/solution.o: src/leetcode/solution.cpp.o
+
+.PHONY : src/leetcode/solution.o
+
+# target to build an object file
+src/leetcode/solution.cpp.o:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/leetcode/solution.cpp.o
+.PHONY : src/leetcode/solution.cpp.o
+
+src/leetcode/solution.i: src/leetcode/solution.cpp.i
+
+.PHONY : src/leetcode/solution.i
+
+# target to preprocess a source file
+src/leetcode/solution.cpp.i:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/leetcode/solution.cpp.i
+.PHONY : src/leetcode/solution.cpp.i
+
+src/leetcode/solution.s: src/leetcode/solution.cpp.s
+
+.PHONY : src/leetcode/solution.s
+
+# target to generate assembly for a file
+src/leetcode/solution.cpp.s:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/leetcode/solution.cpp.s
+.PHONY : src/leetcode/solution.cpp.s
+
+src/leetcode/tester.o: src/leetcode/tester.cpp.o
+
+.PHONY : src/leetcode/tester.o
+
+# target to build an object file
+src/leetcode/tester.cpp.o:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/leetcode/tester.cpp.o
+.PHONY : src/leetcode/tester.cpp.o
+
+src/leetcode/tester.i: src/leetcode/tester.cpp.i
+
+.PHONY : src/leetcode/tester.i
+
+# target to preprocess a source file
+src/leetcode/tester.cpp.i:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/leetcode/tester.cpp.i
+.PHONY : src/leetcode/tester.cpp.i
+
+src/leetcode/tester.s: src/leetcode/tester.cpp.s
+
+.PHONY : src/leetcode/tester.s
+
+# target to generate assembly for a file
+src/leetcode/tester.cpp.s:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/leetcode/tester.cpp.s
+.PHONY : src/leetcode/tester.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -586,6 +668,141 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/utils/utils.o: src/utils/utils.cpp.o
+
+.PHONY : src/utils/utils.o
+
+# target to build an object file
+src/utils/utils.cpp.o:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/utils/utils.cpp.o
+.PHONY : src/utils/utils.cpp.o
+
+src/utils/utils.i: src/utils/utils.cpp.i
+
+.PHONY : src/utils/utils.i
+
+# target to preprocess a source file
+src/utils/utils.cpp.i:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/utils/utils.cpp.i
+.PHONY : src/utils/utils.cpp.i
+
+src/utils/utils.s: src/utils/utils.cpp.s
+
+.PHONY : src/utils/utils.s
+
+# target to generate assembly for a file
+src/utils/utils.cpp.s:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/utils/utils.cpp.s
+.PHONY : src/utils/utils.cpp.s
+
+src/utils/utils_array.o: src/utils/utils_array.cpp.o
+
+.PHONY : src/utils/utils_array.o
+
+# target to build an object file
+src/utils/utils_array.cpp.o:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/utils/utils_array.cpp.o
+.PHONY : src/utils/utils_array.cpp.o
+
+src/utils/utils_array.i: src/utils/utils_array.cpp.i
+
+.PHONY : src/utils/utils_array.i
+
+# target to preprocess a source file
+src/utils/utils_array.cpp.i:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/utils/utils_array.cpp.i
+.PHONY : src/utils/utils_array.cpp.i
+
+src/utils/utils_array.s: src/utils/utils_array.cpp.s
+
+.PHONY : src/utils/utils_array.s
+
+# target to generate assembly for a file
+src/utils/utils_array.cpp.s:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/utils/utils_array.cpp.s
+.PHONY : src/utils/utils_array.cpp.s
+
+src/utils/utils_map.o: src/utils/utils_map.cpp.o
+
+.PHONY : src/utils/utils_map.o
+
+# target to build an object file
+src/utils/utils_map.cpp.o:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/utils/utils_map.cpp.o
+.PHONY : src/utils/utils_map.cpp.o
+
+src/utils/utils_map.i: src/utils/utils_map.cpp.i
+
+.PHONY : src/utils/utils_map.i
+
+# target to preprocess a source file
+src/utils/utils_map.cpp.i:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/utils/utils_map.cpp.i
+.PHONY : src/utils/utils_map.cpp.i
+
+src/utils/utils_map.s: src/utils/utils_map.cpp.s
+
+.PHONY : src/utils/utils_map.s
+
+# target to generate assembly for a file
+src/utils/utils_map.cpp.s:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/utils/utils_map.cpp.s
+.PHONY : src/utils/utils_map.cpp.s
+
+src/utils/utils_string.o: src/utils/utils_string.cpp.o
+
+.PHONY : src/utils/utils_string.o
+
+# target to build an object file
+src/utils/utils_string.cpp.o:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/utils/utils_string.cpp.o
+.PHONY : src/utils/utils_string.cpp.o
+
+src/utils/utils_string.i: src/utils/utils_string.cpp.i
+
+.PHONY : src/utils/utils_string.i
+
+# target to preprocess a source file
+src/utils/utils_string.cpp.i:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/utils/utils_string.cpp.i
+.PHONY : src/utils/utils_string.cpp.i
+
+src/utils/utils_string.s: src/utils/utils_string.cpp.s
+
+.PHONY : src/utils/utils_string.s
+
+# target to generate assembly for a file
+src/utils/utils_string.cpp.s:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/utils/utils_string.cpp.s
+.PHONY : src/utils/utils_string.cpp.s
+
+src/utils/utils_vector.o: src/utils/utils_vector.cpp.o
+
+.PHONY : src/utils/utils_vector.o
+
+# target to build an object file
+src/utils/utils_vector.cpp.o:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/utils/utils_vector.cpp.o
+.PHONY : src/utils/utils_vector.cpp.o
+
+src/utils/utils_vector.i: src/utils/utils_vector.cpp.i
+
+.PHONY : src/utils/utils_vector.i
+
+# target to preprocess a source file
+src/utils/utils_vector.cpp.i:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/utils/utils_vector.cpp.i
+.PHONY : src/utils/utils_vector.cpp.i
+
+src/utils/utils_vector.s: src/utils/utils_vector.cpp.s
+
+.PHONY : src/utils/utils_vector.s
+
+# target to generate assembly for a file
+src/utils/utils_vector.cpp.s:
+	$(MAKE) -f CMakeFiles/leetcode.dir/build.make CMakeFiles/leetcode.dir/src/utils/utils_vector.cpp.s
+.PHONY : src/utils/utils_vector.cpp.s
 
 # Help Target
 help:
@@ -628,12 +845,36 @@ help:
 	@echo "... ContinuousMemCheck"
 	@echo "... ContinuousTest"
 	@echo "... ContinuousSubmit"
-	@echo "... src/leetcode.o"
-	@echo "... src/leetcode.i"
-	@echo "... src/leetcode.s"
+	@echo "... src/leetcode/leetcode.o"
+	@echo "... src/leetcode/leetcode.i"
+	@echo "... src/leetcode/leetcode.s"
+	@echo "... src/leetcode/listnode.o"
+	@echo "... src/leetcode/listnode.i"
+	@echo "... src/leetcode/listnode.s"
+	@echo "... src/leetcode/solution.o"
+	@echo "... src/leetcode/solution.i"
+	@echo "... src/leetcode/solution.s"
+	@echo "... src/leetcode/tester.o"
+	@echo "... src/leetcode/tester.i"
+	@echo "... src/leetcode/tester.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/utils/utils.o"
+	@echo "... src/utils/utils.i"
+	@echo "... src/utils/utils.s"
+	@echo "... src/utils/utils_array.o"
+	@echo "... src/utils/utils_array.i"
+	@echo "... src/utils/utils_array.s"
+	@echo "... src/utils/utils_map.o"
+	@echo "... src/utils/utils_map.i"
+	@echo "... src/utils/utils_map.s"
+	@echo "... src/utils/utils_string.o"
+	@echo "... src/utils/utils_string.i"
+	@echo "... src/utils/utils_string.s"
+	@echo "... src/utils/utils_vector.o"
+	@echo "... src/utils/utils_vector.i"
+	@echo "... src/utils/utils_vector.s"
 .PHONY : help
 
 
@@ -645,6 +886,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	$(CMAKE_COMMAND) -P /home/j32u4ukh/Documents/CppLearning/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
