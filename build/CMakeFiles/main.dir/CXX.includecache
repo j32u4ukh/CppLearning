@@ -6,3 +6,29 @@
 
 #IncludeRegexTransform: 
 
+../include/n_queens.hpp
+string.h
+-
+
+../include/utils.hpp
+iostream
+-
+string
+-
+vector
+-
+map
+-
+
+/home/j32u4ukh/Documents/CppLearning/src/main.cpp
+iostream
+-
+string.h
+-
+vector
+-
+utils.hpp
+/home/j32u4ukh/Documents/CppLearning/src/utils.hpp
+n_queens.hpp
+/home/j32u4ukh/Documents/CppLearning/src/n_queens.hpp
+

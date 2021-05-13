@@ -7,7 +7,7 @@
 #include <map>
 
 #define _countof(array) sizeof(array)/sizeof(*array)
-#define defGetArrayLength(_array) (sizeof(_array) / sizeof(_array[0]))
+#define defGetArrayLength(_array) (sizeof(_array) / sizeof(*_array))
 
 namespace utils {
 	std::string boolToString(bool);	

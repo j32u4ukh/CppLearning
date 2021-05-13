@@ -5,6 +5,7 @@
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/j32u4ukh/Documents/CppLearning/./src/*.cpp")
 set(OLD_GLOB
   "/home/j32u4ukh/Documents/CppLearning/./src/main.cpp"
+  "/home/j32u4ukh/Documents/CppLearning/./src/n_queens.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

@@ -2,7 +2,8 @@
 #include <string.h>
 #include <vector>
 
-// #include "leetcode/utils.hpp"
+#include "utils.hpp"
+#include "n_queens.hpp"
 
 using namespace std;
 
@@ -22,42 +23,83 @@ void printVector(vector<T> v);
 
 vector<int> findIndexs(int board[][size]);
 
-void put(int board[][size], int height, int pos);
+void put(int board[][size], size_t height, size_t pos);
 
 template <typename T>
 void subMatrix(T matrix[][size], T sub_matrix[][size], size_t rows);
 
-void mask(int board[][size], size_t height, int pos, int dh, int dw);
+void mask(int board[][size], size_t height, size_t pos, int dh, int dw);
 
 // ==================================================
 // ==================================================
+
+template <typename T, size_t N>
+void initMatrix(T matrix[N][N], int init_value){
+    // std::cout << "N:" << N << std::endl;
+    // std::cout << "sizeof(T):" << sizeof(T) << std::endl;
+    // std::cout << "__n:" << sizeof(T) * N << std::endl;
+    memset(matrix, init_value, sizeof(T) * N * N);
+}
+
+void print(int **v, size_t height, size_t width){
+    size_t h, w;
+
+    for(h = 0; h < height; h++){
+        for(w = 0; w < width; w++){
+            printf("%d ", v[h][w]);
+        }
+
+        printf("\n");
+    }
+}
 
 int main(int argc, char** argv){
-    int board[size][size] = {{0}};
-    int height = sizeof(board) / sizeof(board[0]);
+    int v[3][3] = { {1, 2, 3}, 
+                    {4, 5, 6}, 
+                    {7, 8, 9}};
+    int *p[3] = {v[0], v[1], v[2]};
+    print(p, 3, 3);
+
+    // int board[size][size];
+    // n_queens::initMatrix(board, 0, size);
+    // printMatrix(board, _countof(board));
+
+    // // init the board with 0
+    // int board[size][size] = {{0}};
+
+    // // get the height of board
+    // int height = sizeof(board) / sizeof(board[0]);
     
-    cout << "Origin" << endl;
-    printMatrix(board, height);
-    put(board, height, 3);
+    // cout << "Origin" << endl;
+
+    // // display the status of matrix(board)
+    // printMatrix(board, height);
+
+    // // place the chess on (0, 3)
+    // put(board, height, 3);
     
-    cout << "Put (0, 3)" << endl;
-    printMatrix(board, height);
+    // cout << "Put (0, 3)" << endl;
+    // printMatrix(board, height);
     
+    // height -= 1;
+    // int board1[height][size];
+
+    // // get the submatrix of matrix above
+    // subMatrix(board, board1, height);
+
+    // // find the available positionto place chess
+    // vector<int> index = findIndexs(board1);
+    // cout << "findIndexs" << endl;
+    // printVector(index);    
     
-    height -= 1;
-    int board1[height][size];
-    subMatrix(board, board1, height);
-    vector<int> index = findIndexs(board1);
-    cout << "findIndexs" << endl;
-    printVector(index);    
+    // cout << "board1" << endl;
+    // printMatrix(board1, height);
+
+    // // place the next chess on the submatrix according to index
+    // put(board1, height, index[0]);
     
-    cout << "board1" << endl;
-    printMatrix(board1, height);
-    put(board1, height, index[0]);
-    
-    cout << "Put (1, "<< index[0] << ")" << endl;
-    printMatrix(board1, height);
-    
+    // cout << "Put (1, "<< index[0] << ")" << endl;
+    // printMatrix(board1, height);    
 }
 
 // ==================================================
@@ -123,7 +165,7 @@ vector<int> findIndexs(int board[][size]){
     return index;
 }
 
-void put(int board[][size], int height, int pos){
+void put(int board[][size], size_t height, size_t pos){
     for(int w = 0; w < size; w++){
         if(w == pos){
             board[0][w] = 1;
@@ -151,7 +193,7 @@ void subMatrix(T matrix[][size], T sub_matrix[][size], size_t rows){
     }
 }
 
-void mask(int board[][size], size_t height, int pos, int dh, int dw){
+void mask(int board[][size], size_t height, size_t pos, int dh, int dw){
     size_t h, w;
     
     // 若同一直列有棋子，則不符規則

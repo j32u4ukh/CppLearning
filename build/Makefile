@@ -669,6 +669,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/n_queens.o: src/n_queens.cpp.o
+
+.PHONY : src/n_queens.o
+
+# target to build an object file
+src/n_queens.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/n_queens.cpp.o
+.PHONY : src/n_queens.cpp.o
+
+src/n_queens.i: src/n_queens.cpp.i
+
+.PHONY : src/n_queens.i
+
+# target to preprocess a source file
+src/n_queens.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/n_queens.cpp.i
+.PHONY : src/n_queens.cpp.i
+
+src/n_queens.s: src/n_queens.cpp.s
+
+.PHONY : src/n_queens.s
+
+# target to generate assembly for a file
+src/n_queens.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/n_queens.cpp.s
+.PHONY : src/n_queens.cpp.s
+
 src/utils/utils.o: src/utils/utils.cpp.o
 
 .PHONY : src/utils/utils.o
@@ -860,6 +887,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/n_queens.o"
+	@echo "... src/n_queens.i"
+	@echo "... src/n_queens.s"
 	@echo "... src/utils/utils.o"
 	@echo "... src/utils/utils.i"
 	@echo "... src/utils/utils.s"

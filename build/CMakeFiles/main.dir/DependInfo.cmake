@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/j32u4ukh/Documents/CppLearning/src/main.cpp" "/home/j32u4ukh/Documents/CppLearning/build/CMakeFiles/main.dir/src/main.cpp.o"
+  "/home/j32u4ukh/Documents/CppLearning/src/n_queens.cpp" "/home/j32u4ukh/Documents/CppLearning/build/CMakeFiles/main.dir/src/n_queens.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
