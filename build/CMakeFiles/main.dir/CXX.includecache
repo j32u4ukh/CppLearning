@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../include/n_queens.hpp
-string.h
--
-
 ../include/utils.hpp
 iostream
 -
@@ -20,15 +16,33 @@ vector
 map
 -
 
-/home/j32u4ukh/Documents/CppLearning/src/main.cpp
+/home/j32u4ukh/Documents/CppLearning/src/utils/utils.cpp
+utils.hpp
+/home/j32u4ukh/Documents/CppLearning/src/utils/utils.hpp
 iostream
 -
-string.h
--
-vector
--
+
+/home/j32u4ukh/Documents/CppLearning/src/utils/utils_array.cpp
 utils.hpp
-/home/j32u4ukh/Documents/CppLearning/src/utils.hpp
-n_queens.hpp
-/home/j32u4ukh/Documents/CppLearning/src/n_queens.hpp
+/home/j32u4ukh/Documents/CppLearning/src/utils/utils.hpp
+iostream
+-
+
+/home/j32u4ukh/Documents/CppLearning/src/utils/utils_map.cpp
+utils.hpp
+/home/j32u4ukh/Documents/CppLearning/src/utils/utils.hpp
+iostream
+-
+
+/home/j32u4ukh/Documents/CppLearning/src/utils/utils_string.cpp
+utils.hpp
+/home/j32u4ukh/Documents/CppLearning/src/utils/utils.hpp
+
+/home/j32u4ukh/Documents/CppLearning/src/utils/utils_vector.cpp
+utils.hpp
+/home/j32u4ukh/Documents/CppLearning/src/utils/utils.hpp
+string
+-
+iostream
+-
 

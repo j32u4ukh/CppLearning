@@ -1,1 +1,1 @@
-/usr/bin/c++  -std=c++11 -Wall -std=c++11 -O3 -fopenmp -pthread  -rdynamic CMakeFiles/main.dir/src/main.cpp.o CMakeFiles/main.dir/src/n_queens.cpp.o  -o main 
+/usr/bin/c++  -std=c++11 -Wall -std=c++11 -O3 -fopenmp -pthread  -rdynamic CMakeFiles/main.dir/src/main.cpp.o CMakeFiles/main.dir/src/n_queens.cpp.o CMakeFiles/main.dir/src/utils/utils.cpp.o CMakeFiles/main.dir/src/utils/utils_array.cpp.o CMakeFiles/main.dir/src/utils/utils_map.cpp.o CMakeFiles/main.dir/src/utils/utils_string.cpp.o CMakeFiles/main.dir/src/utils/utils_vector.cpp.o  -o main 

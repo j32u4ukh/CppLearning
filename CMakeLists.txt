@@ -13,7 +13,8 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 # file(GLOB TARGET_SRC "./src/*.cpp" )
 
 file(GLOB MAIN_SRC CONFIGURE_DEPENDS "./src/*.cpp" )
-add_executable(main "./src/main.cpp" ${MAIN_SRC})
+file(GLOB MAIN_SRC_UTILS CONFIGURE_DEPENDS "./src/utils/*.cpp" )
+add_executable(main "./src/main.cpp" ${MAIN_SRC} ${MAIN_SRC_UTILS})
 
 # file(GLOB LEETCODE_SRC CONFIGURE_DEPENDS "./src/*.cpp" )
 file(GLOB LEETCODE_SRC_LEETCODE CONFIGURE_DEPENDS "./src/leetcode/*.cpp" )
