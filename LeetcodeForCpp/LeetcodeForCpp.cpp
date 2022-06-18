@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <sstream>
 #include "utils.hpp"
 #include "easy.h"
 
@@ -15,12 +16,12 @@ enum class Color : int {
 template <typename Enumeration>
 auto as_integer(Enumeration const value) -> typename std::underlying_type<Enumeration>::type
 {
-    return static_cast<typename underlying_type<Enumeration>::type>(value);
+    return static_cast<typename std::underlying_type<Enumeration>::type>(value);
 }
 
 template<typename T>
 std::ostream& operator<<(std::ostream& os, const std::vector<T>& vec) {
-    stringstream ss;
+    std::stringstream ss;
     ss << "[";
 
     int len = vec.size();

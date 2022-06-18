@@ -1,4 +1,4 @@
-#include "easy.h"
+ï»¿#include "easy.h"
 
 Easy::Easy() {
 
@@ -54,6 +54,11 @@ int Easy::romanToInt(std::string s) {
     return value;
 }
 
+/// <summary>
+/// å°‡ç¾…é¦¬æ•¸å­—æ‹†æˆå¤šå€‹å­å­—ä¸²ï¼Œå­å­—ä¸²ç¬¦åˆ"æœ€å·¦é‚Šç‚ºæœ€å°å­—å…ƒï¼Œå¾€å³ä¾åºè®Šå¤§"çš„è¦å‰‡
+/// </summary>
+/// <param name="roman"></param>
+/// <returns></returns>
 std::vector<std::string> Easy::subRoman(std::string roman) {
     std::string first;
     std::vector<std::string> second;
@@ -61,12 +66,13 @@ std::vector<std::string> Easy::subRoman(std::string roman) {
 
     if (len > 1) {
         for (i = 1; i < len; i++) {
-            // ­Y¥Ø«e³o­Ó¦r¤¸ ¤p©ó «e¤@­Ó¦r¤¸
+            // è‹¥ç›®å‰é€™å€‹å­—å…ƒ å°æ–¼ å‰ä¸€å€‹å­—å…ƒ
             if (!biggerRoman(roman[i], roman[i - 1])) {
                 break;
             }
         }
 
+        // ç¬¬ 0 å€‹å­—å…ƒå°æ‡‰çš„å€¼æœ€å¤§
         first = roman.substr(0, i);
 
         if (len - i > 0) {
@@ -95,13 +101,21 @@ bool Easy::biggerRoman(char curr_char, char pre_char = NULL) {
     }
 }
 
+/// <summary>
+/// é™£åˆ—çš„æœ€å¾Œä¸€å€‹(æœ€å³é‚Š)å€¼ç‚ºæœ€å¤§çš„å­—å…ƒï¼Œå¾€å·¦å¯èƒ½ç›¸åŒæˆ–è®Šå°ï¼Œ
+/// </summary>
+/// <param name="roman"></param>
+/// <returns></returns>
 int Easy::computeRomanValue(std::string roman) {
     int i, len = roman.length(), value = Leetcode::roman_map[roman[len - 1]];
 
     for (i = len - 2; i >= 0; i--) {
+        // å’Œå³æ–¹å­—å…ƒç›¸åŒï¼Œæ•¸å€¼ç´¯åŠ 
         if (roman[i] == roman[i + 1]) {
             value += Leetcode::roman_map[roman[i]];
         }
+
+        // å’Œå³æ–¹å­—å…ƒä¸åŒï¼Œæ‰£é™¤æ•¸å€¼
         else {
             value -= Leetcode::roman_map[roman[i]];
         }
@@ -152,26 +166,26 @@ std::string Easy::longestCommonPrefix(std::vector<std::string>& strs)
     }
 }
 
-#pragma region isValid: ®Ä²v¥i¦A´£¤É¡A«Ü¦h¨Æ«e¹LÂo¡A©Î³\«á­±ªº¨ä¥L¨BÆJ¤]¥i¥H°µ¨ì
+#pragma region isValid: æ•ˆç‡å¯å†æå‡ï¼Œå¾ˆå¤šäº‹å‰éæ¿¾ï¼Œæˆ–è¨±å¾Œé¢çš„å…¶ä»–æ­¥é©Ÿä¹Ÿå¯ä»¥åšåˆ°
 bool Easy::isValid(std::string s)
 {
     int len = s.length();
 
-    // ªø«×¬° 0
+    // é•·åº¦ç‚º 0
     if (len == 0) {
-        //cout << "true: ªø«×¬° 0" << endl;
+        //cout << "true: é•·åº¦ç‚º 0" << endl;
         return true;
     }
 
-    // Á`ªø«× µ¥©ó 1¡AµLªk²Õ¦¨¦³®Äªº¬A©·
+    // ç¸½é•·åº¦ ç­‰æ–¼ 1ï¼Œç„¡æ³•çµ„æˆæœ‰æ•ˆçš„æ‹¬å¼§
     if (len & 1) {
-        //cout << "Á`ªø«× µ¥©ó 1" << endl;
+        //cout << "ç¸½é•·åº¦ ç­‰æ–¼ 1" << endl;
         return false;
     }
 
-    // ­Ó¼Æ¬°©_¼Æ­Ó¡AµLªk²Õ¦¨¦³®Äªº¬A©·
+    // å€‹æ•¸ç‚ºå¥‡æ•¸å€‹ï¼Œç„¡æ³•çµ„æˆæœ‰æ•ˆçš„æ‹¬å¼§
     if (len % 2 != 0) {
-        //cout << "Á`­Ó¼Æ¬°©_¼Æ­Ó" << endl;
+        //cout << "ç¸½å€‹æ•¸ç‚ºå¥‡æ•¸å€‹" << endl;
         return false;
     }
 
@@ -197,41 +211,41 @@ bool Easy::isValid(std::string s)
         return false;
     }
 
-    // §ä¤£¨ì¥k¬A©·
+    // æ‰¾ä¸åˆ°å³æ‹¬å¼§
     if (right == -1) {
-        //cout << "§ä¤£¨ì¥k¬A©·" << endl;
+        //cout << "æ‰¾ä¸åˆ°å³æ‹¬å¼§" << endl;
         return false;
     }
 
-    // ²Ä¤@²Õ¬A©·¶¡¨S¦³¨ä¥L¬A©·    
+    // ç¬¬ä¸€çµ„æ‹¬å¼§é–“æ²’æœ‰å…¶ä»–æ‹¬å¼§    
     if (right == 1) {
         if (len == 2) {
-            //cout << "true: ²Ä¤@²Õ¬A©·¶¡¨S¦³¨ä¥L¬A©·¡A¥Bªø«×¬° 2" << endl;
+            //cout << "true: ç¬¬ä¸€çµ„æ‹¬å¼§é–“æ²’æœ‰å…¶ä»–æ‹¬å¼§ï¼Œä¸”é•·åº¦ç‚º 2" << endl;
             return true;
         }
 
-        // ­pºâ¥k¬A©·¥k¤è³Ñ¾lªº¬A©·­Ó¼Æ¡A­Y¬°©_¼Æ­Ó¡A«hµLªk²Õ¦¨¦³®Äªº¬A©·
+        // è¨ˆç®—å³æ‹¬å¼§å³æ–¹å‰©é¤˜çš„æ‹¬å¼§å€‹æ•¸ï¼Œè‹¥ç‚ºå¥‡æ•¸å€‹ï¼Œå‰‡ç„¡æ³•çµ„æˆæœ‰æ•ˆçš„æ‹¬å¼§
         int n_right = len - right - 1;
         if (n_right % 2 != 0) {
-            //cout << "¥k¤è³Ñ¾lªº¬A©·­Ó¼Æ¬°©_¼Æ­Ó" << endl;
+            //cout << "å³æ–¹å‰©é¤˜çš„æ‹¬å¼§å€‹æ•¸ç‚ºå¥‡æ•¸å€‹" << endl;
             return false;
         }
 
         return true & isValid(s.substr(right + 1, n_right));
     }
 
-    // ²Ä¤@²Õ¬A©·¶¡¥]§t¤F¨ä¥L¬A©·
+    // ç¬¬ä¸€çµ„æ‹¬å¼§é–“åŒ…å«äº†å…¶ä»–æ‹¬å¼§
     else {
-        // left ¬°°¸¼Æ®É¡Aªí¥Ü¥ª¥k¬A©·©Ò§¨¬A©·­Ó¼Æ¬°©_¼Æ­Ó¡AµLªk²Õ¦¨¦³®Äªº¬A©·
+        // left ç‚ºå¶æ•¸æ™‚ï¼Œè¡¨ç¤ºå·¦å³æ‹¬å¼§æ‰€å¤¾æ‹¬å¼§å€‹æ•¸ç‚ºå¥‡æ•¸å€‹ï¼Œç„¡æ³•çµ„æˆæœ‰æ•ˆçš„æ‹¬å¼§
         if (right % 2 == 0) {
-            //cout << "²Ä¤@²Õ¬A©·¶¡¥]§t¤F¨ä¥L¬A©·¡A¥B¥k¤è³Ñ¾lªº¬A©·­Ó¼Æ¬°©_¼Æ­Ó" << endl;
+            //cout << "ç¬¬ä¸€çµ„æ‹¬å¼§é–“åŒ…å«äº†å…¶ä»–æ‹¬å¼§ï¼Œä¸”å³æ–¹å‰©é¤˜çš„æ‹¬å¼§å€‹æ•¸ç‚ºå¥‡æ•¸å€‹" << endl;
             return false;
         }
 
-        // ­pºâ¥k¬A©·¥k¤è³Ñ¾lªº¬A©·­Ó¼Æ¡A­Y¬°©_¼Æ­Ó¡A«hµLªk²Õ¦¨¦³®Äªº¬A©·
+        // è¨ˆç®—å³æ‹¬å¼§å³æ–¹å‰©é¤˜çš„æ‹¬å¼§å€‹æ•¸ï¼Œè‹¥ç‚ºå¥‡æ•¸å€‹ï¼Œå‰‡ç„¡æ³•çµ„æˆæœ‰æ•ˆçš„æ‹¬å¼§
         int n_right = len - right - 1;
         if (n_right % 2 != 0) {
-            //cout << "²Ä¤@²Õ¬A©·¶¡¥]§t¤F¨ä¥L¬A©·¡A¥B¥ª¥k¬A©·©Ò§¨¬A©·­Ó¼Æ¬°©_¼Æ­Ó" << endl;
+            //cout << "ç¬¬ä¸€çµ„æ‹¬å¼§é–“åŒ…å«äº†å…¶ä»–æ‹¬å¼§ï¼Œä¸”å·¦å³æ‹¬å¼§æ‰€å¤¾æ‹¬å¼§å€‹æ•¸ç‚ºå¥‡æ•¸å€‹" << endl;
             return false;
         }
 
@@ -239,14 +253,23 @@ bool Easy::isValid(std::string s)
             return true & isValid(s.substr(1, right - 1));
         }
         else {
+            // åˆ¤æ–· "é¦–å€‹æ‰¾åˆ°çš„æ‹¬å¼§ä¸­é–“å€æ®µ" ä»¥åŠ "å³æ‹¬å¼§ä»¥å³çš„å€æ®µ" åˆ†åˆ¥æ˜¯å¦ä¹Ÿåˆæ³•
             return true & isValid(s.substr(1, right - 1)) & isValid(s.substr(right + 1, n_right));
         }
     }
 
-    //cout << "¨ä¥L¿ù»~(" << s << "): len = " << len << ", left = " << left << ", right = " << right << endl;
+    //cout << "å…¶ä»–éŒ¯èª¤(" << s << "): len = " << len << ", left = " << left << ", right = " << right << endl;
     return false;
 }
 
+/// <summary>
+/// æ‰¾åˆ°å·¦æ‹¬å¼§ -1ï¼Œæ‰¾åˆ°å³æ‹¬å¼§ +1ï¼Œç•¶æ‰¾åˆ°åˆæ³•çš„å€æ®µå¾Œå°±å›å‚³ç´¢å¼•å€¼
+/// ç•¶å…ˆæ‰¾åˆ°å…©å€‹å·¦æ‹¬å¼§ï¼Œå°±å¿…é ˆæ‰¾åˆ°å…©å€‹å³æ‹¬å¼§æ‰ç®—æˆåŠŸï¼Œä»¥æ­¤é¡æ¨ã€‚
+/// </summary>
+/// <param name="left_parentheses"></param>
+/// <param name="s"></param>
+/// <param name="right_parentheses"></param>
+/// <returns></returns>
 int Easy::findRightParentheses(char left_parentheses, std::string s, char right_parentheses) {
     int i, len = s.length(), pointer = 0;
 
@@ -258,6 +281,7 @@ int Easy::findRightParentheses(char left_parentheses, std::string s, char right_
             pointer += 1;
         }
 
+        // å·¦å³æ‹¬å¼§æ•¸å°ç¨±é»
         if (pointer == 0) {
             return i;
         }
@@ -271,7 +295,7 @@ ListNode* Easy::mergeTwoLists(ListNode* l1, ListNode* l2)
 {
     int len1 = l1->getDepth(), len2 = l2->getDepth();
 
-    // §PÂ_­Ó§Oªø«×¡A­Y¦³ ListNode ¬° 0 ªº¡A«hªğ¦^¥t¤@­Ó ListNode
+    // åˆ¤æ–·å€‹åˆ¥é•·åº¦ï¼Œè‹¥æœ‰ ListNode ç‚º 0 çš„ï¼Œå‰‡è¿”å›å¦ä¸€å€‹ ListNode
     if ((len1 == 0) || (len2 == 0)) {
         if ((len1 == 0) && (len2 == 0)) {
             return nullptr;
@@ -301,33 +325,40 @@ ListNode* Easy::mergeTwoLists(ListNode* l1, ListNode* l2)
 
         merge_list = node;
 
-        // node1, node2 ³£¬°ªÅ®É¡Aµ²§ô°j°é
-        while ((node1 != nullptr) || (node2 != nullptr)) {
-            // node1, node2 ³£¤£¬°ªÅ
-            if ((node1 != nullptr) && (node2 != nullptr)) {
-                // node1 ¼Æ­È¸û¤p
-                if (node1->val <= node2->val) {
+        // node1, node2 éƒ½ç‚ºç©ºæ™‚ï¼ŒçµæŸè¿´åœˆ
+        while ((node1 != nullptr) || (node2 != nullptr)) 
+        {
+            // node1, node2 éƒ½ä¸ç‚ºç©º
+            if ((node1 != nullptr) && (node2 != nullptr)) 
+            {
+                // node1 æ•¸å€¼è¼ƒå°
+                if (node1->val <= node2->val) 
+                {
                     node->next = new ListNode(node1->val);
                     node1 = node1->next;
                 }
 
-                // node2 ¼Æ­È¸û¤p
-                else {
+                // node2 æ•¸å€¼è¼ƒå°
+                else 
+                {
                     node->next = new ListNode(node2->val);
                     node2 = node2->next;
                 }
             }
 
-            // node1, node2 ¨ä¤¤¤@­Ó¬°ªÅ
-            else {
-                // node1 ¤£¬°ªÅ
-                if (node2 == nullptr) {
+            // node1, node2 å…¶ä¸­ä¸€å€‹ç‚ºç©º
+            else 
+            {
+                // node1 ä¸ç‚ºç©º
+                if (node2 == nullptr) 
+                {
                     node->next = new ListNode(node1->val);
                     node1 = node1->next;
                 }
 
-                // node2 ¤£¬°ªÅ
-                else {
+                // node2 ä¸ç‚ºç©º
+                else 
+                {
                     node->next = new ListNode(node2->val);
                     node2 = node2->next;
                 }
@@ -341,11 +372,11 @@ ListNode* Easy::mergeTwoLists(ListNode* l1, ListNode* l2)
     }
 }
 
-// µù¸Ñ¤º®e¬°§ó§Ö³tªºª©¥»¡A¥u»İªø«×¤ºªº¤º®e¬O¥¦©Ò¹w´Áªº´N¦n¡A¤£»İ­n­×§ï¾ã­Ó vector
+// è¨»è§£å…§å®¹ç‚ºæ›´å¿«é€Ÿçš„ç‰ˆæœ¬ï¼Œåªéœ€é•·åº¦å…§çš„å…§å®¹æ˜¯å®ƒæ‰€é æœŸçš„å°±å¥½ï¼Œä¸éœ€è¦ä¿®æ”¹æ•´å€‹ vector
 int Easy::removeDuplicates(std::vector<int>& nums)
 {
-    /*
-    int len = static_cast<int>(nums.size());
+    //int len = static_cast<int>(nums.size());
+    int len = nums.size();
 
     if (len == 0 || len == 1) {
         return len;
@@ -364,26 +395,26 @@ int Easy::removeDuplicates(std::vector<int>& nums)
 
         return elements + 1;
     }
-    */
-    size_t len = nums.size();
-    if (len == 0 || len == 1) {
-        return len;
-    }
 
-    std::vector<int>::iterator it;
-    int last = nums[0];
+    //size_t len = nums.size();
+    //if (len == 0 || len == 1) {
+    //    return len;
+    //}
 
-    for (it = nums.begin() + 1; it != nums.end(); it++) {
-        if (*it == last) {
-            it = nums.erase(it);
-            it--;
-        }
-        else {
-            last = *it;
-        }
-    }
+    //std::vector<int>::iterator it;
+    //int last = nums[0];
 
-    return nums.size();
+    //for (it = nums.begin() + 1; it != nums.end(); it++) {
+    //    if (*it == last) {
+    //        it = nums.erase(it);
+    //        it--;
+    //    }
+    //    else {
+    //        last = *it;
+    //    }
+    //}
+
+    //return nums.size();
 }
 
 int Easy::removeElement(std::vector<int>& nums, int val)

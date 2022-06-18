@@ -1,4 +1,4 @@
-#include "leetcode.h"
+﻿#include "leetcode.h"
 
 std::unordered_map<char, int> Leetcode::roman_map = {
     {'I', 1},
@@ -28,11 +28,8 @@ ListNode* vectorToListNode(const std::vector<int>& vi) {
     }
 }
 
-bool operator==(const ListNode& self, const ListNode& other) {
-    //bool operator==(const ListNode &self, const ListNode& other) const {
-    std::cout << "operator==" << std::endl;
-    return true;
-
+bool operator==(const ListNode& self, const ListNode& other) 
+{
     int depth = self.getDepth(), other_depth = other.getDepth();
 
     if (depth != other_depth) {
