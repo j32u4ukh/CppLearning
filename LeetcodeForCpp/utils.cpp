@@ -2,7 +2,6 @@
 
 #include <iostream>
 
-
 namespace utils {
 	std::string boolToString(bool b) {
 		if (b) {
