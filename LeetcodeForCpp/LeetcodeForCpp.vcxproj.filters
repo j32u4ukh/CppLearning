@@ -21,9 +21,21 @@
     <ClCompile Include="utils.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="easy.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="leetcode.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="utils.hpp">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="easy.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="leetcode.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

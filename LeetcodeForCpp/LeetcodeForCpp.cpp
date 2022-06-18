@@ -3,11 +3,59 @@
 
 #include <iostream>
 #include "utils.hpp"
+#include "easy.h"
+
+enum class Color : int {
+    red,
+    green,
+    blue
+};
+
+// 將 enum class 當中的列舉值轉換成數字
+template <typename Enumeration>
+auto as_integer(Enumeration const value) -> typename std::underlying_type<Enumeration>::type
+{
+    return static_cast<typename underlying_type<Enumeration>::type>(value);
+}
+
+template<typename T>
+std::ostream& operator<<(std::ostream& os, const std::vector<T>& vec) {
+    stringstream ss;
+    ss << "[";
+
+    int len = vec.size();
+    if (len > 0) {
+        ss << vec[0];
+
+        int i;
+        for (i = 1; i < vec.size(); i++) {
+            ss << ", " << vec[i];
+        }
+    }
+
+    ss << "]";
+    os << ss.str();
+    return os;
+}
+
+/* 傳遞物件的函式，須分別傳遞"被建立的物件"本身位置，以及"物件函式"的位置
+tester.classFunctionPointerTest(&solution, &Solution::classFunctionPointer);
+
+// 參考：https://www.tutorialspoint.com/function-pointer-to-member-function-in-cplusplus
+*/
 
 int main()
 {
-    std::cout << "Hello World!" << std::endl;
-    std::cout << utils::boolToString(true) << std::endl;
+	ListNode* q1 = new ListNode(1);
+	q1->addNode(2);
+	q1->addNode(4);
+
+	ListNode* q2 = new ListNode(1);
+	q2->addNode(2);
+	q2->addNode(4);
+
+	bool result = *q1 == *q2;
+    std::cout << result << std::endl;
 }
 
 // 執行程式: Ctrl + F5 或 [偵錯] > [啟動但不偵錯] 功能表

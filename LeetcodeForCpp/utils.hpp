@@ -5,13 +5,8 @@
 #include <vector>
 #include <map>
 
-
-using namespace std;
-
-
 // #define �R�W�W�h�G�H def ���}�Y
 #define defGetArrayLength(_array) (sizeof(_array) / sizeof(_array[0]))
-
 
 namespace utils {
 	std::string boolToString(bool);
